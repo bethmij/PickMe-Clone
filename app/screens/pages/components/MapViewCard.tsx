@@ -25,7 +25,23 @@ const MapViewCard = () => {
     
   }, [origin, destination]);
 
-  
+  useEffect(()=>{
+    if (!origin?.location || !destination?.location) return;
+    
+    const getTravelTime = async () => {
+        fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?
+                units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAP_KEY}`
+        ).then(response => response.json())
+        .then(data => {
+            dispatch(setTravelTimeInfo(data.rows[0].elements[0]))
+        })
+    } 
+    setTimeout(() => {
+        getTravelTime()
+    }, 500); 
+    
+  },[origin, destination, GOOGLE_MAP_KEY])
+
 
   return (
     <MapView
