@@ -5,6 +5,7 @@ import { GOOGLE_MAP_KEY } from '@env';
 import { useDispatch } from 'react-redux';
 import { setOrigin, setDestination, setIsRideOptions } from '@/slices/navSlice'
 import { Href, router, useRouter } from 'expo-router';
+import NavFavorite from './NavFavorite';
 
 
 const NavigateCard = () => {
@@ -46,6 +47,7 @@ const NavigateCard = () => {
         nearbyPlacesAPI='GooglePlacesSearch'
         debounce={100}            
          />    
+         <NavFavorite/>  
                      
     </View>
   )
