@@ -4,6 +4,7 @@ import { Provider, useDispatch, useSelector } from 'react-redux'
 import { store } from '@/store'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { Href, router } from 'expo-router';
+import { GOOGLE_MAP_KEY } from '@env';
 
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
@@ -42,7 +43,38 @@ const Home = () => {
               <Text className='text-xl text-gray-700 font-bold self-center'>Good Morining, Bethmi </Text>
             </View>
             <View className='flex flex-col h-screen bg-yellow-50 p-5  rounded-t-3xl'>             
-           
+
+            <GooglePlacesAutocomplete
+                  placeholder='Where from?'
+                  styles={{
+                    container:{
+                      flex:0,
+                    },
+                    textInput:{
+                      fontSize: 18,
+                    },
+                  }}
+                 
+                  onPress={(data, details = null) => {
+                    if (details) {
+                      dispatch(setOrigin({
+                        location: details.geometry.location,
+                        description: data.description,
+                      }));
+                    }
+                    dispatch(setDestination(null));
+                  }}
+                   
+                  enablePoweredByContainer={false}                
+                  fetchDetails={true}
+                  minLength={2}
+                  query={{
+                    key:GOOGLE_MAP_KEY,
+                    language: 'en', 
+                  }}
+                  nearbyPlacesAPI='GooglePlacesSearch'
+                  // debounce={100}            
+                />              
                 
 
                 <FlatList 
