@@ -3,6 +3,8 @@ import React from 'react';
 import {selectIsRideOptions } from '@/slices/navSlice'
 import { useSelector } from 'react-redux';
 import MapViewCard from './components/MapViewCard';
+import RideOptions from './components/RideOptions';
+import NavigateCard from './components/NavigateCard';
 
 
 const Maps = () => {
@@ -14,7 +16,11 @@ const Maps = () => {
         <MapViewCard />
       </View>
       <View style={{ flex: 1 }}>
-      
+      {isRideOptions ? (
+          <RideOptions />
+        ) : (
+          <NavigateCard/>
+        )}   
       </View>
     </View>
   );
