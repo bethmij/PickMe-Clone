@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { GOOGLE_MAP_KEY } from '@env';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { setOrigin, setDestination, selectOrigin, selectDestination } from '@/slices/navSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Icon } from 'react-native-elements';
+import { GOOGLE_MAP_KEY } from '@env';
 
 interface Props {
     type: 'origin' | 'destination';
