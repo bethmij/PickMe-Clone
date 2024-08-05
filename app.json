@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "pickme-clone",
-    "slug": "pickme-clone",
+    "name": "SmartPay",
+    "slug": "SmartPay",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
