@@ -3,8 +3,9 @@ import React, { useEffect, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectOrigin, selectDestination, setTravelTimeInfo } from '@/slices/navSlice';
-import { GOOGLE_MAP_KEY } from '@env';
 import MapViewDirections from 'react-native-maps-directions';
+import { Icon } from 'react-native-elements';
+import { GOOGLE_MAP_KEY } from '@env';
 
 const MapViewCard = () => {
   const origin = useSelector(selectOrigin);
@@ -55,15 +56,25 @@ const MapViewCard = () => {
       followsUserLocation={true} 
     >
       {origin?.location && (
-        <Marker
-          coordinate={{
-            latitude: origin.location.lat,
-            longitude: origin.location.lng,
-          }}
-          title='Current Location'
-          description={origin.description}
-          identifier='origin'
-        />
+         <Marker
+         coordinate={{
+           latitude: origin.location.lat,
+           longitude: origin.location.lng,
+         }}
+         title='Current Location'
+         description={origin.description}
+         identifier='origin'
+       >
+        
+           <Icon
+             name='accessibility'
+             type='ionicon'
+             color='black'
+             size={40}
+           />
+          
+        
+       </Marker>
       )}
 
       {destination?.location && (

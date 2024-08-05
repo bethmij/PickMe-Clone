@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { GOOGLE_MAP_KEY } from '@env';
+// import { GOOGLE_MAP_KEY } from '@env';
 import { useDispatch } from 'react-redux';
 import { setOrigin, setDestination, setIsRideOptions } from '@/slices/navSlice'
 import { Href, router, useRouter } from 'expo-router';
@@ -14,42 +14,43 @@ const NavigateCard = () => {
   const route = '../components/RideOptions' as Href<string | object>;
 
   return (
-    <View>
-      <GooglePlacesAutocomplete
-        placeholder='Where from?'
-        styles={{
-        container:{
-            flex:0,
-        },
-        textInput:{
-            fontSize: 18,
-        },
-        }}
+    <View><Text>dfsdfsdfsdf</Text></View>
+    // <View>
+    //   <GooglePlacesAutocomplete
+    //     placeholder='Where from?'
+    //     styles={{
+    //     container:{
+    //         flex:0,
+    //     },
+    //     textInput:{
+    //         fontSize: 18,
+    //     },
+    //     }}
         
-        onPress={(data, details = null) => {
-        if (details) {
-            dispatch(setDestination({
-            location: details.geometry.location,
-            description: data.description,
-            }));
-            dispatch(setIsRideOptions(true));
-        }
+    //     onPress={(data, details = null) => {
+    //     if (details) {
+    //         dispatch(setDestination({
+    //         location: details.geometry.location,
+    //         description: data.description,
+    //         }));
+    //         dispatch(setIsRideOptions(true));
+    //     }
         
-        }}
+    //     }}
         
-        enablePoweredByContainer={false}                
-        fetchDetails={true}
-        minLength={2}
-        query={{
-        key:GOOGLE_MAP_KEY,
-        language: 'en', 
-        }}
-        nearbyPlacesAPI='GooglePlacesSearch'
-        debounce={100}            
-         />    
-         <NavFavorite/>  
+    //     enablePoweredByContainer={false}                
+    //     fetchDetails={true}
+    //     minLength={2}
+    //     query={{
+    //     key:GOOGLE_MAP_KEY,
+    //     language: 'en', 
+    //     }}
+    //     nearbyPlacesAPI='GooglePlacesSearch'
+    //     debounce={100}            
+    //      />    
+    //      <NavFavorite/>  
                      
-    </View>
+    // </View>
   )
 }
 
