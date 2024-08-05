@@ -16,4 +16,5 @@ export default function RootLayout() {
         </Provider>
       </PaperProvider>  
     </SafeAreaProvider>
-  );}
+  );
+}
