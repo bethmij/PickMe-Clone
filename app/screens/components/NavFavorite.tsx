@@ -1,23 +1,53 @@
 import {FlatList, TouchableOpacity, View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Icon } from 'react-native-elements'
+import { useDispatch, useSelector } from 'react-redux';
+import { selectOrigin, setInitialValue, setOrigin } from '@/slices/navSlice';
 
-const data = [
+const NavFavorite = () => {
+  const dispatch  = useDispatch();
+  const origin = useSelector(selectOrigin);
+  const [initialOrigin, setInitialOrigin] = useState({
+    description: "No location set",
+    location: { lat: 0, lng: 0 },
+  });
+
+ 
+  useEffect(() => {
+    if (origin) {
+      setInitialOrigin({
+        description: origin.description || "No location set",
+        location: origin.location || { lat: 0, lng: 0 },
+      });
+    }
+  }, []);
+  
+  
+  const data = [
     {
-        id:1,
-        icon:"home",
-        location:"Home",
-        destination: "Hapugala, Sri Lanka",
-    },
+        id: 1,
+        icon: "accessibility",
+        location: "Current Location",
+        destination: initialOrigin.description, 
+        coordinate: initialOrigin.location,    
+      },
     {
         id:2,
+        icon:"home",
+        location:"Home",
+        destination: "Hapugala, Galle, Sri Lanka",
+        coordinate: { lat: '6.0765847', lng: '80.1958755.' }
+    },
+    {
+        id:3,
         icon:"briefcase",
         location:"Work",
         destination: "Colombo, Sri Lanka",
+        coordinate: { lat: '6.9270786', lng: '79.861243' }
     }
 ]
 
-const NavFavorite = () => {
+
   return (
     <FlatList
     data={data}
@@ -26,7 +56,15 @@ const NavFavorite = () => {
         <View style={{height: 0.5, backgroundColor: 'gray'}} />
     )}
     renderItem={({item}) => (
-        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
+        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', padding: 10}}
+        onPress={() => {
+            dispatch(setOrigin({
+                location: item.coordinate,
+                description: item.destination,
+              }));
+            dispatch(setInitialValue(item.location))  
+        }}
+        >
             <Icon
                 name={item.icon}
                 type="ionicon"
@@ -38,6 +76,8 @@ const NavFavorite = () => {
                 <Text style={{fontWeight: 'bold', fontSize: 16}}>{item.location}</Text>
                 <Text style={{color: 'gray'}}>{item.destination}</Text>
             </View>
+            
+            
         </TouchableOpacity>
     )}
 />
