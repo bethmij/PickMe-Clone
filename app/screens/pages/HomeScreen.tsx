@@ -31,7 +31,7 @@ export default function HomeScreen() {
                     
                     <View className="px-4 py-2">
                         <Text className="text-lg font-semibold my-5">Where are you going?</Text>
-                        <GooglePlacesField type="destination" />
+                        <GooglePlacesField type="destination" color='#EBEAE0' />
                     </View>
 
                     

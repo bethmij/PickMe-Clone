@@ -10,6 +10,7 @@ export default function RootLayout() {
         <Provider store={store}>
           <Stack>
             <Stack.Screen name="index"  options={{ headerShown: false }} />
+            <Stack.Screen name="screens/pages/RideBookingScreen" options={{headerShown:false}}/>
             
           </Stack>
         </Provider>     
