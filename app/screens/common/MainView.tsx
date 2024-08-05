@@ -8,6 +8,6 @@ import RideBookingScreen from "../pages/RideBookingScreen";
 export default function 
 () {
   return (
-    <MapScreen/>
+    <LocationView/>
   )
 }

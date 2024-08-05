@@ -11,7 +11,7 @@ export default function RootLayout() {
           <Stack>
             <Stack.Screen name="index"  options={{ headerShown: false }} />
             <Stack.Screen name="screens/pages/RideBookingScreen" options={{headerShown:false}}/>
-            
+            <Stack.Screen name="screens/pages/MapScreen" options={{headerShown:false}}/>
           </Stack>
         </Provider>     
     </SafeAreaProvider>

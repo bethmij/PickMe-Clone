@@ -17,6 +17,7 @@ const GooglePlacesField = ({ type, color }: Props) => {
   const initialValue = useSelector(selectInitialValue);
   const destination = useSelector(selectDestination);
   const [placeholderText, setPlaceholderText] = useState('');
+  const [inputValue, setInputValue] = useState(initialValue); 
 
   useEffect(() => {
     setPlaceholderText (initialValue !=="" && type === 'origin' ? initialValue : type === 'origin' ? 'Where from?' : 'Enter Your Destination?')
@@ -77,8 +78,13 @@ const GooglePlacesField = ({ type, color }: Props) => {
               description: data.description,
             }));
           }
+          setInputValue(data.description); 
           
         }}
+        textInputProps={{
+            value: inputValue,  
+            onChangeText: setInputValue,  
+          }}
        
         enablePoweredByContainer={false}
         fetchDetails={true}
