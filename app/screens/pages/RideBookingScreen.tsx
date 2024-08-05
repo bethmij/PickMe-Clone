@@ -2,16 +2,18 @@ import React from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Icon } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
 import GooglePlacesField from '../components/GooglePlacesField';
 import NavFavorite from '../components/NavFavorite';
 import { selectOrigin, setInitialValue } from '@/slices/navSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Href, router } from 'expo-router';
 
 export default function RideBookingScreen() {
   const navigation = useNavigation();
   const origin = useSelector(selectOrigin);
   const dispatch = useDispatch();
+  const mapUrl = "screens/pages/MapScreen" as Href<string | object>;
 
   
 
@@ -19,7 +21,7 @@ export default function RideBookingScreen() {
     <SafeAreaView className="flex-1 bg-gray-100">
    
       <View className="flex-row justify-between items-center px-4 py-3 ">
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => router.back()}>
           <Icon name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
         <TouchableOpacity className="bg-blue-500 py-1 px-4 rounded-full flex flex-row gap-x-3">
@@ -89,6 +91,8 @@ export default function RideBookingScreen() {
         </View>
         <NavFavorite/>   
       </View>
+
+      <Button title="Map" onPress={()=>{router.push(mapUrl)}}></Button>
 
      
 

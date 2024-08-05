@@ -36,14 +36,14 @@ const NavFavorite = () => {
         icon:"home",
         location:"Home",
         destination: "Hapugala, Galle, Sri Lanka",
-        coordinate: { lat: '6.0765847', lng: '80.1958755.' }
+        coordinate: { lat: 6.0765847, lng: 80.1958755 }
     },
     {
         id:3,
         icon:"briefcase",
         location:"Work",
         destination: "Colombo, Sri Lanka",
-        coordinate: { lat: '6.9270786', lng: '79.861243' }
+        coordinate: { lat: 6.9270786, lng: 79.861243}
     }
 ]
 
@@ -60,7 +60,7 @@ const NavFavorite = () => {
         onPress={() => {
             dispatch(setOrigin({
                 location: item.coordinate,
-                description: item.destination,
+                description: item.location,
               }));
             dispatch(setInitialValue(item.location))  
         }}
