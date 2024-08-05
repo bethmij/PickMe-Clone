@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setOrigin } from '@/slices/navSlice';
 import MapViewCard from '../components/MapViewCard';
 import { Button, Icon } from 'react-native-elements';
-import { router } from 'expo-router';
+import { Href, router } from 'expo-router';
 
 const LocationView = () => {
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState('Location Loading...');
@@ -16,6 +16,8 @@ const LocationView = () => {
     checkIfLocationEnabled();
     getCurrentLocation();
   }, []);
+
+  const bookRideUri = "/screens/pages/RideBookingScreen" as Href<string | object>;
 
   // Check if location services are enabled
   const checkIfLocationEnabled = async () => {
@@ -80,7 +82,7 @@ const LocationView = () => {
        
         <View className="absolute bottom-0 left-0 right-0 shadow-2xl shadow-black bg-white p-4 rounded-3xl">
             <View className="flex-row justify-around items-center w-full">
-              <TouchableOpacity className='bg-gray-100 w-1/2 rounded-3xl'>
+              <TouchableOpacity className='bg-gray-100 w-1/2 py-2 rounded-3xl'>
                 <Text className="text-sm text-center">One way</Text>
               </TouchableOpacity>
               <TouchableOpacity className="ml-5">
@@ -91,7 +93,7 @@ const LocationView = () => {
          
           <TouchableOpacity 
             className="mt-4 flex flex-row items-center w-full gap-x-10"
-            onPress={() => router.push('PickupScreen')} 
+            onPress={() => router.push(bookRideUri)} 
           >
             <Text className="text-blue-500 font-bold text-sm">PICKUP</Text>
             <Text className="pt-1 text-gray-500 text-sm ">Your location</Text>
@@ -100,7 +102,7 @@ const LocationView = () => {
          <View className='w-full h-[0.5] bg-gray-400 mt-3'></View>
          <TouchableOpacity 
             className="mt-4 flex flex-row items-center w-full gap-x-12"
-            onPress={() => router.push('PickupScreen')} 
+            onPress={() => router.push(bookRideUri)} 
           >
             <Text className="text-orange-500 font-bold text-sm">DROP</Text>
             <Text className="pt-1 text-gray-500 text-sm "> Where are you going?</Text>
