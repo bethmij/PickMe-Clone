@@ -14,7 +14,7 @@ const Maps = () => {
 
   const isRideOptions = useSelector(selectIsRideOptions);
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
       <TouchableOpacity className="absolute top-5 left-10 z-50 bg-gray-300 rounded-full p-2 shadow-2xl shadow-black"
         onPress={()=>router.back()}>
@@ -25,7 +25,7 @@ const Maps = () => {
       <View style={{ flex: 1 }}>
       <RideOptions />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

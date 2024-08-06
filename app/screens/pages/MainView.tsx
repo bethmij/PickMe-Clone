@@ -10,7 +10,7 @@ const loginUrl = "/screens/pages/LogIn" as Href<string | object>;
 const MainView = () => {
     
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-yellow-100">
       <View className="h-screen relative">
         <View className="h-1/2 bg-red-500 absolute top-0 w-full">
           <ImageBackground
@@ -19,7 +19,7 @@ const MainView = () => {
             resizeMode="stretch"
           />
         </View>
-        <View className="h-1/2 flex  flex-col pt-10 bg-white rounded-t-3xl absolute bottom-0 w-full mb-10" style={{ marginTop: -50 }}>
+        <View className="h-1/2 flex  flex-col pt-10 bg-yellow-100 rounded-t-3xl absolute bottom-0 w-full mb-10" style={{ marginTop: -50 }}>
         <Image className='w-full self-center'
             source={require("../../../assets/pickMe-preview.png")}
             style={{width:200, height:60}}
@@ -36,7 +36,7 @@ const MainView = () => {
                 titleStyle={{ fontWeight: 'bold', fontSize: 20, color: 'black', paddingVertical: 8, }}  
                 ViewComponent={LinearGradient} 
                 linearGradientProps={{
-                    colors: ["#DFD90D", "#ECCB13"],
+                    colors: ["#F1C70A", "#F1960A"],
                     start: { x: 0, y: 0.5 },
                     end: { x: 1, y: 0.5 },
                 }}            
