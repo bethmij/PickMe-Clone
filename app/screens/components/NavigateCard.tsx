@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { GOOGLE_MAP_KEY } from '@env';
 import { useDispatch } from 'react-redux';
 import { setOrigin, setDestination, setIsRideOptions } from '@/slices/navSlice'
 import { Href, router, useRouter } from 'expo-router';
 import NavFavorite from './NavFavorite';
+import { GOOGLE_MAP_KEY } from '@env';
 
 
 const NavigateCard = () => {

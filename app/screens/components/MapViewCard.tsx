@@ -89,7 +89,7 @@ const MapViewCard = () => {
         />
       )}
 
-      {origin && destination && (
+     {origin && destination && (
         <MapViewDirections
           origin={origin.description}
           destination={destination.description}
@@ -97,7 +97,7 @@ const MapViewCard = () => {
           strokeWidth={3}
           strokeColor='black'
         />
-      )}
+      )} 
     </MapView>
   );
 };
