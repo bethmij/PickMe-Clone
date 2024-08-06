@@ -4,11 +4,12 @@ import { Provider, useDispatch, useSelector } from 'react-redux'
 import { store } from '@/store'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { Href, router } from 'expo-router';
-import { GOOGLE_MAP_KEY } from '@env';
+
 
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import { setOrigin, setDestination, selectOrigin } from '@/slices/navSlice'
+import { GOOGLE_MAP_KEY } from '@env'
 
 
 

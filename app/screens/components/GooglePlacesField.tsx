@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Icon } from 'react-native-elements';
 import { GOOGLE_MAP_KEY } from '@env';
 
+
 interface Props {
   type: 'origin' | 'destination';
   color: string;
