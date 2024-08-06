@@ -13,7 +13,7 @@ const LogIn = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    router.push('screens/pages/Dashboard');
+    alert(`${email}, .... ${password}`);
   };
 
   const handleForgotPassword = () => {
@@ -24,63 +24,68 @@ const LogIn = () => {
     Alert.alert('Google Login', 'Redirecting to Google login');
   };
 
-  const handleFacebookLogin = () => {
-    Alert.alert('Facebook Login', 'Redirecting to Facebook login');
-  };
+  
 
   return (
-    <ImageBackground
-      source={require('../../../assets/login.jpg' )}
-      className="flex-1 justify-center"
-      resizeMode="cover"
-    >
+   
       <LinearGradient
-        colors={['rgba(0,0,0,0.8)', 'transparent']}
-        className="flex-1 justify-center px-5"
+        colors={['#F1C70A', '#F1960A']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        className="flex-1 justify-center "
       >
-        <View className="rounded-lg p-5  shadow-lg w-[90vw] h-[60vh] ">
-          <View className=" absolute bg-white bg-opacity-80 w-[90vw]  h-full opacity-25 rounded-lg "></View>
+        <View className="rounded-lg p-5 mx-5 shadow-lg w-[90vw] h-[50vh] z-10 ">
+          <View className="  absolute bg-white bg-opacity-80 w-[90vw]  h-full opacity-25 rounded-lg "></View>
           <View className='flex flex-row justify-center gap-x-5 items-center mb-8'>
-          <Text className="text-4xl font-bold text-orange-600 text-center shadow-md ">Wattpad</Text>
-            <Image
-              source={require('../../../assets/background.jpeg.png' )}
-              className="w-20 h-16 "
+          
+            <Image className='w-full self-center'
+              source={require("../../../assets/pickme_logo.png")}
+              style={{width:60, height:60}}
+              resizeMode="stretch"
+            />   
+            <Image className='w-full self-center'
+              source={require("../../../assets/pickMe-preview.png")}
+              style={{width:200, height:60}}
+              resizeMode="stretch"
             />            
           </View>
           
           <TextInput
-            className="h-12 border border-gray-300 rounded mb-4 px-3 bg-transparent"
+            className="h-12 border border-gray-700  rounded mb-4 px-3 bg-transparent"
             placeholder="Email"
-            placeholderTextColor="#ccc"
+            placeholderTextColor="#000"
             onChangeText={setEmail}
             value={email}
             keyboardType="email-address"
           />
           <TextInput
-            className="h-12 border border-gray-300 rounded mb-4 px-3 bg-transparent"
+            className="h-12 border border-gray-700 rounded mb-4 px-3 bg-transparent"
             placeholder="Password"
-            placeholderTextColor="#ccc"
+            placeholderTextColor="#000"
             onChangeText={setPassword}
             value={password}
             secureTextEntry
           />
           <Button title="Login" onPress={handleLogin} color="#db4437" />
           <TouchableOpacity onPress={handleForgotPassword}>
-            <Text className="text-center text-white mt-4  text-lg">Forgot Password?</Text>
+            <Text className="text-right  w-full text-orange-800 text-sm">Forgot Password?</Text>
           </TouchableOpacity>
-          <Text className="text-center my-4 text-white text-lg">OR</Text>
+          <Text className="text-center my-4 text-orange-800 text-lg">OR</Text>
           <View className="flex flex-col space-y-3">
             <View>
-              <Button title="Login with Google" onPress={handleGoogleLogin} color="#f56b60" />
+              <Button title="Sign Up" onPress={handleGoogleLogin} color="#D08211" />
             </View>
-            <View>
-              <Button title="Login with Facebook" onPress={handleFacebookLogin} color="#3b5998" />
-            </View>
+           
           </View>
 
         </View>
+        <Image className='self-center absolute w-full bottom-0 z-0 '
+              source={require("../../../assets/building.png")}
+              style={{width:'100%', height:400}}
+              resizeMode="stretch"
+            />       
       </LinearGradient>
-    </ImageBackground>
+ 
   );
 };
 

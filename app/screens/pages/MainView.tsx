@@ -20,7 +20,7 @@ const MainView = () => {
           />
         </View>
         <View className="h-1/2 flex  flex-col pt-10 bg-white rounded-t-3xl absolute bottom-0 w-full mb-10" style={{ marginTop: -50 }}>
-        <ImageBackground className='w-full self-center'
+        <Image className='w-full self-center'
             source={require("../../../assets/pickMe-preview.png")}
             style={{width:200, height:60}}
             resizeMode="stretch"
