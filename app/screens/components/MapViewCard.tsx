@@ -7,6 +7,7 @@ import MapViewDirections from 'react-native-maps-directions';
 import { Icon } from 'react-native-elements';
 import { GOOGLE_MAP_KEY } from '@env';
 
+
 const MapViewCard = () => {
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);

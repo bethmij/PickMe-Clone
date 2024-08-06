@@ -8,6 +8,7 @@ import NavFavorite from './NavFavorite';
 import { GOOGLE_MAP_KEY } from '@env';
 
 
+
 const NavigateCard = () => {
   const dispatch = useDispatch()
   const router = useRouter();

@@ -13,6 +13,7 @@ import { GOOGLE_MAP_KEY } from '@env'
 
 
 
+
 const data = [
   {
     id: 1,
