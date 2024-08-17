@@ -8,6 +8,8 @@ import { GOOGLE_MAP_KEY } from '@env';
 
 
 
+
+
 interface Props {
   type: 'origin' | 'destination';
   color: string;

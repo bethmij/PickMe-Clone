@@ -67,12 +67,12 @@ const RideOptions = () => {
                         {travelTimeInfo ? 
                             new Intl.NumberFormat('en-US', {
                                 style: 'currency', 
-                                currency: 'USD'
+                                currency: 'LKR'
                             }).format(
                                 (travelTimeInfo?.distance.value * 
                                     SURGE_CHANGE_RATE *
                                     multiplier )/
-                                    100
+                                    50
                             ) : 'N/A'
                         }
                     </Text>

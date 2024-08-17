@@ -23,6 +23,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "expo": "~51.0.21",
     "expo-constants": "~16.0.2",
+    "expo-firebase-recaptcha": "^2.3.1",
     "expo-font": "~12.0.9",
     "expo-linear-gradient": "^13.0.2",
     "expo-linking": "~6.3.1",
@@ -50,7 +51,8 @@
     "react-native-screens": "^3.31.1",
     "react-native-vector-icons": "^10.1.0",
     "react-native-web": "~0.19.10",
-    "react-redux": "^9.1.2"
+    "react-redux": "^9.1.2",
+    "react-native-webview": "13.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

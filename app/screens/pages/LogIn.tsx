@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, TouchableOpacity, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { auth } from "../../../firebase"; 
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../../firebase"; 
+// import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+
 
 const LogIn = () => {
   const router = useRouter();
@@ -11,31 +12,32 @@ const LogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        router.push('/screens/pages/HomeScreen');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert("Login Failed")
-      });
+  const handleLogin = () => {  
+    router.push('/screens/pages/HomeScreen');
+    // signInWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     const user = userCredential.user;
+    //     router.push('/screens/pages/HomeScreen');
+    //   })
+    //   .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     alert("Login Failed")
+    //   });
   };
 
 
 
   const handleSignUp = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        Alert.alert('Sign Up Success', 'User registered successfully');
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        alert(errorMessage);
-      });
+    // createUserWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     const user = userCredential.user;
+    //     Alert.alert('Sign Up Success', 'User registered successfully');
+    //   })
+    //   .catch((error) => {
+    //     const errorMessage = error.message;
+    //     alert(errorMessage);
+    //   });
   };
 
   return (
@@ -43,9 +45,9 @@ const LogIn = () => {
       colors={['#F1C70A', '#F1960A']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
-      className="flex-1 justify-center"
+      className="flex-1 justify-center items-center"
     >
-      <View className="rounded-lg p-5 mx-5 shadow-lg w-[90vw] h-[50vh] z-10">
+      <View className="rounded-lg p-5 shadow-lg w-[90vw] h-[55vh] z-10">
         <View className="absolute bg-white bg-opacity-80 w-[90vw] h-full opacity-25 rounded-lg"></View>
         <View className='flex flex-row justify-center gap-x-5 items-center mb-8'>
           <Image
