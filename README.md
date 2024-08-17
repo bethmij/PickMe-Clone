@@ -18,19 +18,23 @@ Frontend
 Feel free to explore the code, contribute, and share your feedback to help improve the application!
 
 - Loading Page
--  <img src="./Screenshot/loading.png" alt="login" width="500"/>
+-  <img src="./Screenshot/loading.png" alt="login" width="300"/>
 
 - Login Page
--  <img src="./Screenshot/login.png" alt="login" width="500"/>
+-  <img src="./Screenshot/login.png" alt="login" width="300"/>
 
 - Dashboard
--  <img src="./Screenshot/dashboard.png" alt="dashboard_1" width="500"/>
+-  <img src="./Screenshot/dashboard.png" alt="dashboard_1" width="300"/>
+
+- Live Location Page 
+-  <img src="./Screenshot/location1.jpeg" alt="dashboard_1" width="300"/>
+-  <img src="./Screenshot/location2.jpeg" alt="dashboard_1" width="300"/>
 
 - Navigating Page
--  <img src="./Screenshot/nav.png" alt="searchPage" width="500"/>
+-  <img src="./Screenshot/nav.png" alt="searchPage" width="300"/>
 
 - Ride Option Page
--  <img src="./Screenshot/ride.png" alt="libraryPage" width="500"/>
+-  <img src="./Screenshot/ride.png" alt="libraryPage" width="300"/>
 
 
 
